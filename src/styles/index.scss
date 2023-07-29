@@ -1,0 +1,62 @@
+$colorRed: #61dafb;
+$colorWhite: #fff;
+$colorBackground:#20232a;
+$fontFamily: 'Josefin Sans', sans-serif;
+
+* {
+  padding: 0;
+  margin: 0;
+  border: none;
+  box-sizing: border-box;
+  font-family: $fontFamily;
+}
+
+.background-color-grey {
+  background-color: $colorBackground;
+  width: 100%;
+  min-height: 90vh;
+  padding: 100px 0px;
+}
+
+span {
+  color: $colorRed;
+}
+
+h1 {
+  color: $colorWhite;
+  margin: 20px 0px 20px;
+  font-size: 75px;
+}
+
+h4 {
+  color: $colorWhite;
+  letter-spacing: 2px;
+  font-size: 20px;
+}
+
+h3 {
+  color: $colorWhite;
+  font-size: 25px;
+  margin-bottom: 50px;
+}
+
+.btn {
+  background-color: $colorRed !important;
+  color: $colorWhite !important;
+  text-decoration: none !important;
+  border: 2px solid transparent !important;
+  font-weight: bold !important;
+  padding: 10px 25px !important;
+  border-radius: 25px !important;
+  transition: transform 0.4s !important;
+}
+
+.btn:hover {
+  transform: scale(1.1) !important;
+  cursor: pointer;
+}
+
+.btn:disabled {
+  cursor: not-allowed;
+  opacity: 40%;
+}

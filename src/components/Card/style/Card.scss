@@ -1,0 +1,56 @@
+$backgroundColor: #20232a;
+
+#card {
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.04);
+  background-color: $backgroundColor;
+  transition: 0.4s ease;
+  min-height: 365px;
+  width: 335px;
+  border-radius: 20px;
+  margin: 15px;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+
+  img {
+    width: 105%;
+    max-height: 135px;
+  }
+
+  .card-body {
+    height: 95%;
+    padding: 1.08rem;
+  }
+
+  h3 {
+    font-size: 22px;
+  }
+
+  p {
+    color: white;
+    margin: 5px;
+  }
+
+  .show-more {
+    appearance: none;
+    background-color: $backgroundColor;
+    color: white;
+    text-decoration: underline;
+    cursor: pointer;
+    display: inline-block;
+    margin-left: 5px;
+  }
+
+  @media (max-width: 768px) {
+    #card {
+      margin: 20px;
+      a {
+        font-size: 0.8em;
+      }
+    }
+  }
+}
+
+.card:hover {
+  transform: scale(1.05);
+}

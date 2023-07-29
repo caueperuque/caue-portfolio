@@ -1,0 +1,25 @@
+$textColor: #fff;
+
+.projects {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+  &__title {
+    color: $textColor;
+    font-size: 4em;
+    margin: 30px auto;
+    text-align: center;
+  }
+  
+  &__card-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 1800px;
+    flex-wrap: wrap;
+  }
+}
+
+
