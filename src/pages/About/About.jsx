@@ -10,7 +10,7 @@ const TEXTS = [
   Fiz de tudo um pouco, desde suporte em TI até fotografia e cuidar das redes sociais.`,
 
   `Em 2023, decidi me dedicar totalmente aos estudos na Trybe, onde estou aprendendo a ser um Desenvolvedor Web Full Stack.
-  Abaixo estão minhas stacks:`,
+  Abaixo está minha stack atual:`,
 
   `Sou super focado nos meus estudos, carreira e em fazer a diferença na vida das pessoas.
   No meu portfólio, você vai encontrar projetos que mostram minha paixão pela tecnologia e meu comprometimento em entregar ótimos resultados. Bora trabalhar junto e causar impacto no mundo digital!`,

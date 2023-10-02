@@ -6,8 +6,9 @@ export default function CardImagesTech() {
     <article className="cardImages__container">
       {data.map((image) => (
         <div>
-          <img src={image.image} className="cardImages__icon" />
-          {/* <p>{image.name}</p> */}
+          <a>
+            <img src={image.image} className="cardImages__icon"/>
+          </a>
         </div>
       ))}
     </article>

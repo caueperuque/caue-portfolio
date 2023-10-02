@@ -13,3 +13,12 @@
     margin: 10px;
   }
 }
+
+@media screen and (max-width: 460px) {
+  .cardImages {
+    &__container {
+      width: 115%;
+      // border: red 2px solid;
+    }
+  }
+}
