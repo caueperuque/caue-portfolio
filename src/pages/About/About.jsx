@@ -2,6 +2,7 @@
 import React, { useEffect } from 'react';
 import { profileImg } from '../../images';
 import setPageTitle from '../../utils/setPageTitle';
+import { CardImagesTech } from '../../components/CardImagesTech/index'
 import './style/About.scss';
 
 const TEXTS = [
@@ -9,7 +10,7 @@ const TEXTS = [
   Fiz de tudo um pouco, desde suporte em TI até fotografia e cuidar das redes sociais.`,
 
   `Em 2023, decidi me dedicar totalmente aos estudos na Trybe, onde estou aprendendo a ser um Desenvolvedor Web Full Stack.
-  E praticando muito HTML, CSS, JavaScript, React e Jest.`,
+  Abaixo está minha stack atual:`,
 
   `Sou super focado nos meus estudos, carreira e em fazer a diferença na vida das pessoas.
   No meu portfólio, você vai encontrar projetos que mostram minha paixão pela tecnologia e meu comprometimento em entregar ótimos resultados. Bora trabalhar junto e causar impacto no mundo digital!`,
@@ -28,7 +29,7 @@ export default function About() {
       <div className="container mt-5 about">
         <img
           className="img-fluid about__picture"
-          src={ profileImg }
+          src={profileImg}
           alt="foto cauê peruque"
         />
         <div className="about__text mt-3">
@@ -39,12 +40,15 @@ export default function About() {
           <p>
             {TEXTS[1]}
           </p>
+          <section className='about__cardImages'>
+            <CardImagesTech />
+          </section>
           <p>
             {TEXTS[2]}
           </p>
           <a
             className="btn"
-            href={ URL_LINKEDIN }
+            href={URL_LINKEDIN}
             target="_blank"
             rel="noreferrer"
           >

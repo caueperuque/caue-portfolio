@@ -32,6 +32,12 @@ $secondaryColor: #fff;
     font-size: 18px;
     margin-bottom: 45px;
   }
+
+  &__cardImages {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 @media screen and (max-width: 990px) {
