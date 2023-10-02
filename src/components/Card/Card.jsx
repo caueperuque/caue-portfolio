@@ -18,6 +18,7 @@ function Card({ name, description }) {
 
   const newName = name.replace(/^trybe-project/i, '')
     .replace(/-/g, ' ')
+    .replace(/_/g, ' ')
     .replace(/(^|\s)\S/g, (firstLetter) => firstLetter.toUpperCase());
 
   useEffect(() => {
