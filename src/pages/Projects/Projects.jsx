@@ -27,6 +27,8 @@ function Projects() {
     fetchData();
   }, [urlToFetch]);
 
+  const regex = /(https?:\/\/[^\s]+)/g;
+
   const renderCards = () => {
     if (repos.length < 1) {
       return <Loading />;
@@ -37,6 +39,7 @@ function Projects() {
         key={ card.id }
         name={ card.name }
         description={ card.description ? card.description : 'teste' }
+        link={ card.description && card.description.match(regex) ? card.description.match(regex)[0] : null }
       />
     ));
   };

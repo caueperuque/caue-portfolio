@@ -1,14 +1,14 @@
 /* eslint-disable no-nested-ternary */
 /* eslint-disable max-len */
-import React, { useEffect, useState, memo } from 'react';
-import PropTypes from 'prop-types';
-import Loading from '../Loading';
-import fetchGithubApi from '../../utils/fetch';
-import { noImage } from '../../images';
-import './style/Card.scss';
+import React, { useEffect, useState, memo } from "react";
+import PropTypes from "prop-types";
+import Loading from "../Loading";
+import fetchGithubApi from "../../utils/fetch";
+import { noImage } from "../../images";
+import "./style/Card.scss";
 
-function Card({ name, description }) {
-  const [image, setImage] = useState('');
+function Card({ name, description, link }) {
+  const [image, setImage] = useState("");
   const [showMore, setShowMore] = useState(false);
   const [isLoadedImage, setIsLoadedImage] = useState(false);
 
@@ -16,15 +16,17 @@ function Card({ name, description }) {
   const URL = `https://github.com/caueperuque/${name}`;
   const URL_FETCH_IMAGE = `https://api.github.com/repos/caueperuque/${name}/contents/images/demo.png`;
 
-  const newName = name.replace(/^trybe-project/i, '')
-    .replace(/-/g, ' ')
-    .replace(/_/g, ' ')
+  const newName = name
+    .replace(/^trybe-project/i, "")
+    .replace(/-/g, " ")
+    .replace(/_/g, " ")
     .replace(/(^|\s)\S/g, (firstLetter) => firstLetter.toUpperCase());
 
   useEffect(() => {
     async function fetchDemo() {
       try {
         const data = await fetchGithubApi(URL_FETCH_IMAGE);
+        console.log(data);
         setImage(!data.message ? data.download_url : noImage);
         setIsLoadedImage(true);
       } catch (error) {
@@ -41,7 +43,12 @@ function Card({ name, description }) {
     setShowMore(!showMore);
   };
 
-  const textToShow = description.length <= MAX_LENGTH ? description : showMore ? description : `${description.slice(0, MAX_LENGTH)}...`;
+  const textToShow =
+    description.length <= MAX_LENGTH
+      ? description
+      : showMore
+      ? description
+      : `${description.slice(0, MAX_LENGTH)}...`;
 
   return (
     <div id="card">
@@ -49,20 +56,30 @@ function Card({ name, description }) {
         <Loading />
       ) : (
         <>
-          <img src={ image } alt={ name } />
+          <img src={image} alt={name} />
           <div className="card-body">
             <h3>{newName}</h3>
             <p>
               {textToShow}
               {description.length > MAX_LENGTH && (
-                <button className="show-more" onClick={ toggleShowMore }>
-                  {showMore ? 'ver menos' : 'ver mais'}
+                <button className="show-more" onClick={toggleShowMore}>
+                  {showMore ? "ver menos" : "ver mais"}
                 </button>
               )}
             </p>
-            <a href={ URL } target="_blank" rel="noreferrer" className="btn mt-2">
+            <a href={URL} target="_blank" rel="noreferrer" className="btn mt-2">
               Visitar Repositório
             </a>
+            {link && (
+              <a
+                href={link}
+                target="_blank"
+                rel="noreferrer"
+                className="btn mt-2"
+              >
+                Visitar Deploy
+              </a>
+            )}
           </div>
         </>
       )}
