@@ -15,7 +15,7 @@ function Projects() {
         if (repositories) {
           const filteredRepositories = repositories
             .filter((repo) => !repo.name.startsWith('caue')
-            && !repo.name.startsWith('portfolio'));
+            && !repo.name.startsWith('portfolio') && !repo.name.startsWith('upbase'));
           setRepos(filteredRepositories);
         }
       } catch (err) {
